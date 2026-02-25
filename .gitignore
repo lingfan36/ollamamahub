@@ -1,0 +1,16 @@
+# 忽略服务器生成的数据
+_data/solutions.json
+cron.log
+运维日志.txt
+运维脚本*.py
+
+# 忽略本地 Node.js
+node_modules/
+
+# 忽略 IDE
+.vscode/
+.idea/
+
+# 忽略系统文件
+.DS_Store
+Thumbs.db
