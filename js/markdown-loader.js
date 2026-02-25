@@ -44,10 +44,11 @@ const SolutionsMap = [
         ]
     },
     {
-        category: "Docker",
+        category: "Configuration",
         items: [
             { id: "docker/cannot-connect-from-container", title: "Cannot Connect from Container" },
-            { id: "docker/gpu-in-docker", title: "GPU in Docker" }
+            { id: "docker/gpu-in-docker", title: "GPU in Docker" },
+            { id: "configuration/boolwithdefault-env-var-bug", title: "BoolWithDefault Bug" }
         ]
     },
     {
@@ -61,7 +62,8 @@ const SolutionsMap = [
         category: "Models",
         items: [
             { id: "models/gguf-import-failed", title: "GGUF Import Failed" },
-            { id: "models/model-download-slow", title: "Model Download Slow" }
+            { id: "models/model-download-slow", title: "Model Download Slow" },
+            { id: "models/qwen2-vl-gguf-image-recognition", title: "Qwen2-VL Image Recognition" }
         ]
     },
     {
