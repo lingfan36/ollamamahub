@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Open WebUI",
+    "description": "User-friendly WebUI for LLMs. A self-hosted WebUI designed to run entirely offline. Supports Ollama and OpenAI-compatible APIs.",
+    "category": "UI Clients",
+    "tags": ["UI Client", "Docker"],
+    "os": ["Web / Cross-platform", "Linux", "macOS", "Windows"],
+    "stars": "45k",
+    "iconClass": "ph-fill ph-chat-centered-text",
+    "iconBg": "bg-blue-100 text-blue-600",
+    "url": "https://github.com/open-webui/open-webui"
+  },
+  {
+    "id": 2,
+    "name": "LangChain",
+    "description": "Building applications with LLMs through composability. Official support and native integrations for Ollama models.",
+    "category": "Agents & Frameworks",
+    "tags": ["Framework", "Python", "JS"],
+    "os": ["Web / Cross-platform"],
+    "stars": "82k",
+    "iconClass": "ph-fill ph-tree-structure",
+    "iconBg": "bg-emerald-100 text-emerald-600",
+    "url": "https://github.com/langchain-ai/langchain"
+  },
+  {
+    "id": 3,
+    "name": "AnythingLLM",
+    "description": "The all-in-one Desktop & Docker AI application with full RAG and AI Agent capabilities. One-click integration with Ollama.",
+    "category": "UI Clients",
+    "tags": ["UI Client", "Desktop"],
+    "os": ["Windows", "macOS", "Linux"],
+    "stars": "18k",
+    "iconClass": "ph-fill ph-folder-notch",
+    "iconBg": "bg-purple-100 text-purple-600",
+    "url": "https://github.com/Mintplex-Labs/anything-llm"
+  },
+  {
+    "id": 4,
+    "name": "LlamaIndex",
+    "description": "Data framework for your LLM applications. Provides a central interface to connect your custom data sources to Ollama LLMs.",
+    "category": "Agents & Frameworks",
+    "tags": ["Framework", "RAG"],
+    "os": ["Web / Cross-platform"],
+    "stars": "32k",
+    "iconClass": "ph-fill ph-database",
+    "iconBg": "bg-orange-100 text-orange-600",
+    "url": "https://github.com/run-llama/llama_index"
+  },
+  {
+    "id": 5,
+    "name": "Ollama-Python",
+    "description": "Official Python library for the Ollama API. Easily integrate local model inference into your Python scripts and backend apps.",
+    "category": "Developer Tools",
+    "tags": ["Library", "Python"],
+    "os": ["Web / Cross-platform"],
+    "stars": "6.5k",
+    "iconClass": "ph-fill ph-terminal-window",
+    "iconBg": "bg-slate-800 text-white",
+    "url": "https://github.com/ollama/ollama-python"
+  },
+  {
+    "id": 6,
+    "name": "Ollama Discord Bot",
+    "description": "A simple Discord bot powered by Ollama. Let your community chat with local LLMs directly within your Discord server.",
+    "category": "Integrations",
+    "tags": ["Integration", "Discord"],
+    "os": ["Web / Cross-platform"],
+    "stars": "1.2k",
+    "iconClass": "ph-fill ph-discord-logo",
+    "iconBg": "bg-yellow-100 text-yellow-600",
+    "url": "https://github.com/ollama/ollama"
+  },
+  {
+    "id": 7,
+    "name": "Ollama.js",
+    "description": "Official JavaScript / TypeScript library for the Ollama API. Works in Node.js and browser environments.",
+    "category": "Developer Tools",
+    "tags": ["Library", "JavaScript", "TypeScript"],
+    "os": ["Web / Cross-platform"],
+    "stars": "4.2k",
+    "iconClass": "ph-fill ph-brackets-curly",
+    "iconBg": "bg-yellow-100 text-yellow-700",
+    "url": "https://github.com/ollama/ollama-js"
+  },
+  {
+    "id": 8,
+    "name": "Msty",
+    "description": "A beautiful and simple desktop app for running LLMs locally with Ollama. Supports multi-model comparison and prompt templates.",
+    "category": "UI Clients",
+    "tags": ["UI Client", "Desktop"],
+    "os": ["Windows", "macOS"],
+    "stars": "3.8k",
+    "iconClass": "ph-fill ph-sparkle",
+    "iconBg": "bg-pink-100 text-pink-600",
+    "url": "https://msty.app"
+  },
+  {
+    "id": 9,
+    "name": "n8n Ollama Node",
+    "description": "Community n8n node that connects your automation workflows to local Ollama models for AI-powered processing.",
+    "category": "Integrations",
+    "tags": ["Integration", "Automation"],
+    "os": ["Web / Cross-platform"],
+    "stars": "2.1k",
+    "iconClass": "ph-fill ph-flow-arrow",
+    "iconBg": "bg-red-100 text-red-600",
+    "url": "https://n8n.io"
+  }
+]

@@ -1,0 +1,60 @@
+<header class="bg-white border-b border-slate-200 sticky top-0 z-50" id="site-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0 flex items-center gap-2">
+                <a href="/pages/index.html" class="flex items-center gap-2" id="header-logo-link">
+                    <i class="ph-fill ph-planet text-3xl text-indigo-600"></i>
+                    <span class="font-bold text-xl tracking-tight">OllamaHub</span>
+                </a>
+            </div>
+
+            <!-- Navigation (Desktop) -->
+            <nav class="hidden md:flex space-x-8" id="main-nav">
+                <a href="/pages/index.html" class="nav-link font-medium transition-colors" data-page="home">Home</a>
+                <a href="/pages/docs/index.html" class="nav-link font-medium transition-colors" data-page="docs">Docs</a>
+                <a href="/pages/solutions/index.html" class="nav-link font-medium transition-colors" data-page="solutions">Solutions</a>
+                <a href="/pages/resources.html" class="nav-link font-medium transition-colors" data-page="resources">Resources</a>
+                <a href="/pages/about.html" class="nav-link font-medium transition-colors" data-page="about">About</a>
+            </nav>
+
+            <!-- Search & Actions -->
+            <div class="flex items-center gap-4">
+                <div class="hidden lg:block relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="header-search-input" placeholder="Search docs, issues..." class="pl-10 pr-12 py-2 border border-slate-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 w-64 bg-slate-50 transition-all">
+                    <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-slate-400 border border-slate-200 rounded px-1.5 py-0.5 bg-white">⌘K</span>
+                    <!-- Search Suggestions Dropdown -->
+                    <div id="search-suggestions" class="hidden absolute top-full left-0 right-0 mt-1 bg-white border border-slate-200 rounded-xl shadow-lg z-50 max-h-80 overflow-y-auto">
+                        <div id="suggestions-list" class="py-2"></div>
+                    </div>
+                </div>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-900 transition-colors">
+                    <i class="ph ph-github-logo text-2xl"></i>
+                </a>
+                <!-- Mobile menu toggle -->
+                <button id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 focus:outline-none" aria-label="Toggle menu">
+                    <i class="ph ph-list text-2xl" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-nav" class="hidden md:hidden bg-white border-t border-slate-200">
+        <div class="px-4 py-3 space-y-1">
+            <a href="/pages/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 hover:text-indigo-600 font-medium">Home</a>
+            <a href="/pages/docs/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 hover:text-indigo-600 font-medium">Docs</a>
+            <a href="/pages/solutions/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 hover:text-indigo-600 font-medium">Solutions</a>
+            <a href="/pages/resources.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 hover:text-indigo-600 font-medium">Resources</a>
+            <a href="/pages/about.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 hover:text-indigo-600 font-medium">About</a>
+            <!-- Mobile Search -->
+            <div class="pt-2 pb-1">
+                <div class="relative">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="mobile-search-input" placeholder="Search docs, issues..." class="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,17 @@
+[
+  { "name": "gpu", "count": 48, "color": "slate" },
+  { "name": "docker", "count": 35, "color": "blue" },
+  { "name": "cuda", "count": 28, "color": "green" },
+  { "name": "windows", "count": 22, "color": "slate" },
+  { "name": "gguf", "count": 19, "color": "purple" },
+  { "name": "oom", "count": 14, "color": "red" },
+  { "name": "langchain", "count": 12, "color": "green" },
+  { "name": "api", "count": 31, "color": "indigo" },
+  { "name": "python", "count": 17, "color": "yellow" },
+  { "name": "linux", "count": 24, "color": "orange" },
+  { "name": "macos", "count": 11, "color": "slate" },
+  { "name": "performance", "count": 20, "color": "amber" },
+  { "name": "modelfile", "count": 9, "color": "purple" },
+  { "name": "nvidia", "count": 26, "color": "green" },
+  { "name": "amd", "count": 13, "color": "red" }
+]

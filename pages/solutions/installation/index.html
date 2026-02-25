@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Advanced Installation - Solutions - OllamaHub</title>
+    <meta property="og:title" content="Advanced Installation - Solutions - OllamaHub">
+    <meta property="og:description" content="Go beyond the basics. Learn how to install Ollama manually, set up systemd services on Linux.">
+    <meta property="og:url" content="https://ollamahub.com/solutions/installation/index.html">
+    <meta property="og:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced Installation - Solutions - OllamaHub">
+    <meta name="twitter:description" content="Go beyond the basics. Learn how to install Ollama manually, set up systemd services on Linux.">
+    <meta name="twitter:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <link rel="canonical" href="https://ollamahub.com/solutions/installation/index.html">
+
+    <meta name="description" content="Go beyond the basics. Learn how to install Ollama manually, set up systemd services on Linux.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter','sans-serif'], mono: ['JetBrains Mono','monospace'] },
+                    colors: { indigo: { 50:'#eef2ff', 100:'#e0e7ff', 500:'#6366f1', 600:'#4f46e5', 700:'#4338ca' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', monospace; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .prose h3 { font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose p { color: #475569; margin-bottom: 1rem; line-height: 1.75; }
+        .prose a { color: #4f46e5; text-decoration: underline; }
+        .prose ul { list-style: disc; padding-left: 1.5rem; color: #475569; margin-bottom: 1rem; }
+        .prose li { margin-bottom: 0.25rem; }
+        .prose strong { color: #1e293b; font-weight: 600; }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H38EBLP10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3H38EBLP10');
+</script>
+</head>
+<body class="bg-white text-slate-900 min-h-screen flex flex-col">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0 flex items-center gap-2">
+                <a href="../../index.html" class="flex items-center gap-2">
+                    <i class="ph-fill ph-planet text-3xl text-indigo-600"></i>
+                    <span class="font-bold text-xl tracking-tight hidden sm:block ">OllamaHub</span>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="../../index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                <a href="../../docs/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Docs</a>
+                <a href="../../solutions/index.html" class="text-indigo-600 font-medium transition-colors">Solutions</a>
+                <a href="../../resources.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Resources</a>
+                <a href="../../about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">About</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="header-search-input" placeholder="Search..." class="pl-10 pr-10 py-1.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-48 lg:w-64 bg-slate-50">
+                    <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 border border-slate-200 rounded px-1.5 py-0.5 bg-white">⌘K</span>
+                </div>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-900">
+                    <i class="ph ph-github-logo text-2xl"></i>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 focus:outline-none">
+                    <i class="ph ph-list text-2xl" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-nav" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3 space-y-1 shadow-md absolute w-full left-0 z-40">
+        <a href="../../index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Home</a>
+        <a href="../../docs/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Docs</a>
+        <a href="../../solutions/index.html" class="block px-3 py-2 rounded-md text-indigo-600 bg-indigo-50 font-medium">Solutions</a>
+        <a href="../../resources.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Resources</a>
+        <a href="../../about.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">About</a>
+        <div class="pt-2 pb-1">
+            <div class="relative">
+                <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="mobile-search-input" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50">
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div class="flex-grow max-w-screen-2xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex items-stretch">
+
+        <!-- Left Sidebar for Solutions -->
+        <aside class="w-64 flex-shrink-0 border-r border-slate-200 py-8 pr-6 hidden md:block overflow-y-auto sticky top-16" style="height:calc(100vh - 4rem);">
+            <nav class="space-y-8">
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Deployment</h3>
+                    <ul class="space-y-1">
+                        <li><a href="../docker/index.html" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Docker Deployment</a></li>
+                        <li><a href="index.html" class="block text-indigo-600 font-medium text-sm py-1 px-2 rounded bg-indigo-50">Advanced Installation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Optimization</h3>
+                    <ul class="space-y-1">
+                        <li><a href="../performance/index.html" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Performance Tuning</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-grow py-8 md:pl-8 lg:pl-12 max-w-3xl overflow-hidden">
+            <nav class="flex text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1">
+                    <li><a href="../index.html" class="hover:text-indigo-600">Solutions</a></li>
+                    <li><i class="ph ph-caret-right text-xs mx-1"></i><span class="text-slate-800 font-medium">Advanced Installation</span></li>
+                </ol>
+            </nav>
+
+            <article class="prose max-w-none">
+                <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 mb-4" id="top">Advanced Installation</h1>
+                <p class="text-lg text-slate-600 mb-6">Learn how to install Ollama manually without curl scripts, set up systemd services on Linux, and customize the installation paths.</p>
+
+                <h2 id="manual">Manual Installation (Linux)</h2>
+                <p>If you prefer not to use the automated <code>curl | sh</code> script, you can manually download and install the Ollama binary.</p>
+
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-bash">sudo curl -L https://ollama.com/download/ollama-linux-amd64 -o /usr/local/bin/ollama
+sudo chmod +x /usr/local/bin/ollama</code></pre>
+                </div>
+                <p>Create an <code>ollama</code> user to run the service securely:</p>
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-bash">sudo useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama
+sudo usermod -a -G video ollama</code></pre>
+                </div>
+
+                <h2 id="systemd">Setting up systemd Service</h2>
+                <p>To run Ollama as a background service on Linux, you should configure a systemd unit file.</p>
+                <p>Create a file at <code>/etc/systemd/system/ollama.service</code>:</p>
+
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-ini">[Unit]
+Description=Ollama Service
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/ollama serve
+User=ollama
+Group=ollama
+Restart=always
+RestartSec=3
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+Environment="OLLAMA_MODELS=/usr/share/ollama/.ollama/models"
+
+[Install]
+WantedBy=default.target</code></pre>
+                </div>
+
+                <p>Enable and start the service:</p>
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-bash">sudo systemctl daemon-reload
+sudo systemctl enable ollama
+sudo systemctl start ollama</code></pre>
+                </div>
+
+                <h2 id="paths">Custom Data Paths</h2>
+                <p>By default, Ollama stores models in <code>~/.ollama/models</code>. You can change this by setting the <code>OLLAMA_MODELS</code> environment variable.</p>
+                <p>If running as a service, modify the systemd file as shown above. If running manually:</p>
+
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-bash">export OLLAMA_MODELS="/mnt/data/ollama/models"
+ollama serve</code></pre>
+                </div>
+            </article>
+
+            <div class="mt-8 mb-8 flex items-center justify-between text-sm text-slate-500 border-t border-slate-200 pt-8">
+                <span>Last updated: Feb 24, 2026</span>
+            </div>
+        </main>
+
+        <!-- Right TOC -->
+        <aside class="w-56 flex-shrink-0 py-8 pl-6 hidden xl:block sticky top-16" style="height:calc(100vh - 4rem);">
+            <div class="border-l border-slate-200 pl-4">
+                <h4 class="font-semibold text-slate-900 mb-3 text-sm">On this page</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#manual" class="block text-slate-600 hover:text-indigo-600 py-0.5">Manual Installation</a></li>
+                    <li><a href="#systemd" class="block text-slate-600 hover:text-indigo-600 py-0.5">systemd Service</a></li>
+                    <li><a href="#paths" class="block text-slate-600 hover:text-indigo-600 py-0.5">Custom Paths</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-planet text-2xl text-slate-400"></i>
+                <span class="font-semibold text-slate-600">OllamaHub</span>
+            </div>
+            <p class="text-sm text-slate-400">&copy; 2026 OllamaHub. Not officially affiliated with Ollama.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ini.min.js"></script>
+    <script src="../../../js/main.js"></script>
+</body>
+</html>

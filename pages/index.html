@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>OllamaHub - The Global Ollama Community</title>
+    <meta property="og:url" content="https://ollamahub.com/">
+    <meta property="og:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OllamaHub - The Global Ollama Community">
+    <meta name="twitter:description" content="Find the best resources, comprehensive documentation, and community-driven solutions for Ollama — the local AI model runner.">
+    <meta name="twitter:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <link rel="canonical" href="https://ollamahub.com/">
+
+    <meta name="description" content="Find the best resources, comprehensive documentation, and community-driven solutions for Ollama — the local AI model runner.">
+    <meta property="og:title" content="OllamaHub - The Global Ollama Community">
+    <meta property="og:description" content="Comprehensive documentation, solutions, and resources for Ollama users worldwide.">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        indigo: { 50:'#eef2ff', 100:'#e0e7ff', 500:'#6366f1', 600:'#4f46e5', 700:'#4338ca' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H38EBLP10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3H38EBLP10');
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0 flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2">
+                    <i class="ph-fill ph-planet text-3xl text-indigo-600"></i>
+                    <span class="font-bold text-xl tracking-tight hidden sm:block ">OllamaHub</span>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-indigo-600 font-medium transition-colors">Home</a>
+                <a href="docs/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Docs</a>
+                <a href="solutions/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Solutions</a>
+                <a href="resources.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Resources</a>
+                <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">About</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="header-search-input" placeholder="Search..." class="pl-10 pr-10 py-1.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-48 lg:w-64 bg-slate-50">
+                    <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 border border-slate-200 rounded px-1.5 py-0.5 bg-white">⌘K</span>
+                </div>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-900">
+                    <i class="ph ph-github-logo text-2xl"></i>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 focus:outline-none">
+                    <i class="ph ph-list text-2xl" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-nav" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3 space-y-1 shadow-md absolute w-full left-0 z-40">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-indigo-600 bg-indigo-50 font-medium">Home</a>
+        <a href="docs/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Docs</a>
+        <a href="solutions/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Solutions</a>
+        <a href="resources.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Resources</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">About</a>
+        <div class="pt-2 pb-1">
+            <div class="relative">
+                <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="mobile-search-input" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50">
+            </div>
+        </div>
+    </div>
+</header>
+
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section class="bg-white border-b border-slate-200 py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                    The Global <span class="text-indigo-600">Ollama</span> Community
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-10">
+                    Find the best resources, comprehensive documentation, and AI-driven solutions to common issues outside the official docs.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="docs/index.html" class="px-8 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-colors shadow-sm w-full sm:w-auto flex items-center justify-center gap-2">
+                        <i class="ph ph-book-open"></i> Explore Docs
+                    </a>
+                    <a href="solutions/index.html" class="px-8 py-3 bg-white text-slate-700 border border-slate-300 rounded-lg font-medium hover:bg-slate-50 transition-colors shadow-sm w-full sm:w-auto flex items-center justify-center gap-2">
+                        <i class="ph ph-lightbulb"></i> Find Solutions
+                    </a>
+                </div>
+                <!-- Mobile Search -->
+                <div class="mt-8 max-w-md mx-auto lg:hidden relative">
+                    <i class="ph ph-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+                    <input type="text" id="hero-search-input" placeholder="Search documentation and solutions..." class="w-full pl-12 pr-4 py-3 border border-slate-300 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="bg-indigo-600 py-6">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-3 gap-4 text-center text-white">
+                    <div>
+                        <div class="text-2xl font-bold">128+</div>
+                        <div class="text-indigo-200 text-sm">Solutions</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold">13</div>
+                        <div class="text-indigo-200 text-sm">Doc Guides</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold">142</div>
+                        <div class="text-indigo-200 text-sm">Resources</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+            <!-- Trending Docs -->
+            <div>
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2">
+                        <i class="ph-fill ph-fire text-orange-500"></i> Trending Docs
+                    </h2>
+                    <a href="docs/index.html" class="text-sm text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        View all <i class="ph ph-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="grid gap-4">
+                    <a href="docs/advanced/index.html" class="block p-5 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 hover:shadow-md transition-all group">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-semibold text-lg text-slate-900 group-hover:text-indigo-600 transition-colors">Running Models on Multiple GPUs</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 whitespace-nowrap ml-2">Advanced</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-3 line-clamp-2">Learn how to configure Ollama to distribute large language models across multiple NVIDIA or AMD GPUs for faster inference.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs text-slate-500 border border-slate-200 px-2 py-1 rounded-md">gpu</span>
+                            <span class="text-xs text-slate-500 border border-slate-200 px-2 py-1 rounded-md">performance</span>
+                        </div>
+                    </a>
+
+                    <a href="docs/api/index.html" class="block p-5 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 hover:shadow-md transition-all group">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-semibold text-lg text-slate-900 group-hover:text-indigo-600 transition-colors">Ollama REST API Reference</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 whitespace-nowrap ml-2">API</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-3 line-clamp-2">Complete guide to generating text, managing models, and embedding via the local REST endpoints.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs text-slate-500 border border-slate-200 px-2 py-1 rounded-md">rest</span>
+                            <span class="text-xs text-slate-500 border border-slate-200 px-2 py-1 rounded-md">integration</span>
+                        </div>
+                    </a>
+
+                    <a href="docs/models/index.html#gguf" class="block p-5 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 hover:shadow-md transition-all group">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-semibold text-lg text-slate-900 group-hover:text-indigo-600 transition-colors">Importing GGUF Custom Models</h3>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 whitespace-nowrap ml-2">Models</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-3 line-clamp-2">Step-by-step tutorial on converting and importing HuggingFace GGUF models using Modelfile.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs text-slate-500 border border-slate-200 px-2 py-1 rounded-md">gguf</span>
+                            <span class="text-xs text-slate-500 border border-slate-200 px-2 py-1 rounded-md">modelfile</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Latest Solutions -->
+            <div>
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold flex items-center gap-2">
+                        <i class="ph-fill ph-check-circle text-green-500"></i> Latest Solutions
+                    </h2>
+                    <a href="solutions/index.html" class="text-sm text-indigo-600 hover:text-indigo-700 font-medium flex items-center">
+                        View all <i class="ph ph-arrow-right ml-1"></i>
+                    </a>
+                </div>
+                <div class="grid gap-4">
+                    <a href="solutions/installation/index.html" class="block p-5 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 hover:shadow-md transition-all group">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors pr-4">Error: llama runner process has terminated</h3>
+                            <div class="flex items-center text-slate-400 text-sm whitespace-nowrap">
+                                <i class="ph-fill ph-fire text-orange-400 mr-1"></i> 124
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-3">Often caused by out-of-memory (OOM) issues or incompatible CUDA drivers. Here is the step-by-step fix.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <div class="flex gap-2">
+                                <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">bug</span>
+                                <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">cuda</span>
+                            </div>
+                            <span class="text-xs text-slate-400">Updated 2h ago</span>
+                        </div>
+                    </a>
+
+                    <a href="solutions/docker/index.html" class="block p-5 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 hover:shadow-md transition-all group">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors pr-4">Cannot connect to Ollama from Docker container</h3>
+                            <div class="flex items-center text-slate-400 text-sm whitespace-nowrap">
+                                <i class="ph-fill ph-fire text-orange-400 mr-1"></i> 89
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-3">How to set OLLAMA_HOST environment variable to allow external connections from other Docker containers.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <div class="flex gap-2">
+                                <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">docker</span>
+                                <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">network</span>
+                            </div>
+                            <span class="text-xs text-slate-400">Updated 1d ago</span>
+                        </div>
+                    </a>
+
+                    <a href="solutions/performance/index.html" class="block p-5 bg-white border border-slate-200 rounded-xl hover:border-indigo-300 hover:shadow-md transition-all group">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-semibold text-slate-900 group-hover:text-indigo-600 transition-colors pr-4">High CPU usage when idle on Windows</h3>
+                            <div class="flex items-center text-slate-400 text-sm whitespace-nowrap">
+                                <i class="ph-fill ph-fire text-orange-400 mr-1"></i> 56
+                            </div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-3">Resolving background processes not terminating correctly on Windows subsystem.</p>
+                        <div class="flex items-center justify-between mt-4">
+                            <div class="flex gap-2">
+                                <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">windows</span>
+                                <span class="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">performance</span>
+                            </div>
+                            <span class="text-xs text-slate-400">Updated 3d ago</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-indigo-50 border-y border-indigo-100 py-16">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Can't find what you're looking for?</h2>
+                <p class="text-lg text-slate-600 mb-8">Our community-driven knowledge base is growing every day. Check out our GitHub issues or ask a new question.</p>
+                <a href="https://github.com/ollama/ollama/issues" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg font-medium hover:bg-slate-800 transition-colors">
+                    <i class="ph ph-github-logo text-xl"></i> Open an Issue
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-planet text-2xl text-slate-400"></i>
+                <span class="font-semibold text-slate-600">OllamaHub</span>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-500">
+                <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-600">Terms of Service</a>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="hover:text-indigo-600">Contribute</a>
+            </div>
+            <p class="text-sm text-slate-400">&copy; 2026 OllamaHub. Not officially affiliated with Ollama.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

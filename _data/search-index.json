@@ -1,0 +1,307 @@
+[
+  {
+    "id": "doc-installation",
+    "type": "doc",
+    "title": "Installation Guide",
+    "summary": "Get up and running with Ollama locally on macOS, Windows, and Linux.",
+    "path": "Getting Started / Installation",
+    "tags": [
+      "install",
+      "macos",
+      "windows",
+      "linux",
+      "docker"
+    ],
+    "url": "/pages/docs/index.html?id=getting-started/installation",
+    "updatedAt": "2026-02-24"
+  },
+  {
+    "id": "doc-quickstart",
+    "type": "doc",
+    "title": "Quickstart",
+    "summary": "Pull your first model and start chatting with Ollama in under 5 minutes.",
+    "path": "Getting Started / Quickstart",
+    "tags": [
+      "quickstart",
+      "pull",
+      "run",
+      "chat"
+    ],
+    "url": "/pages/docs/index.html?id=getting-started/quickstart",
+    "updatedAt": "2026-02-20"
+  },
+  {
+    "id": "doc-configuration",
+    "type": "doc",
+    "title": "Configuration",
+    "summary": "Configure Ollama with environment variables: OLLAMA_HOST, OLLAMA_MODELS, OLLAMA_KEEP_ALIVE, and more.",
+    "path": "Getting Started / Configuration",
+    "tags": [
+      "config",
+      "environment",
+      "OLLAMA_HOST",
+      "OLLAMA_MODELS"
+    ],
+    "url": "/pages/docs/index.html?id=getting-started/configuration",
+    "updatedAt": "2026-02-18"
+  },
+  {
+    "id": "doc-models",
+    "type": "doc",
+    "title": "Model Library",
+    "summary": "Browse available Ollama models: Llama 3, Mistral, Phi-3, Gemma, and more. Pull and manage models from the CLI.",
+    "path": "Models / Model Library",
+    "tags": [
+      "models",
+      "llama",
+      "mistral",
+      "phi",
+      "gemma",
+      "pull"
+    ],
+    "url": "/pages/docs/index.html?id=models/model-library",
+    "updatedAt": "2026-02-22"
+  },
+  {
+    "id": "doc-modelfile",
+    "type": "doc",
+    "title": "Custom Models (Modelfile)",
+    "summary": "Create, customize, and share Ollama models using Modelfile syntax. Set system prompts, temperature, and context window.",
+    "path": "Models / Custom Models",
+    "tags": [
+      "modelfile",
+      "custom",
+      "system prompt",
+      "temperature"
+    ],
+    "url": "/pages/docs/index.html?id=models/custom-models",
+    "updatedAt": "2026-02-15"
+  },
+  {
+    "id": "doc-gguf",
+    "type": "doc",
+    "title": "Importing GGUF Models",
+    "summary": "Import GGUF quantized models from HuggingFace or local files into Ollama using Modelfile.",
+    "path": "Models / Importing GGUF",
+    "tags": [
+      "gguf",
+      "huggingface",
+      "import",
+      "quantization"
+    ],
+    "url": "/pages/docs/index.html?id=models/import-gguf",
+    "updatedAt": "2026-02-10"
+  },
+  {
+    "id": "doc-api",
+    "type": "doc",
+    "title": "REST API Reference",
+    "summary": "Complete reference for the Ollama REST API: /api/generate, /api/chat, /api/embeddings, /api/tags, and more.",
+    "path": "API Reference / REST API",
+    "tags": [
+      "api",
+      "rest",
+      "generate",
+      "chat",
+      "embeddings"
+    ],
+    "url": "/pages/docs/index.html?id=api/rest-api",
+    "updatedAt": "2026-02-20"
+  },
+  {
+    "id": "doc-python",
+    "type": "doc",
+    "title": "Python Library",
+    "summary": "Use the official ollama Python library for async and sync model inference, streaming, and embeddings.",
+    "path": "API Reference / Python Library",
+    "tags": [
+      "python",
+      "library",
+      "async",
+      "streaming"
+    ],
+    "url": "/pages/docs/index.html?id=api/python-library",
+    "updatedAt": "2026-02-12"
+  },
+  {
+    "id": "doc-javascript",
+    "type": "doc",
+    "title": "JavaScript Library",
+    "summary": "Use ollama.js in Node.js or the browser. Supports streaming chat, generate, and embeddings endpoints.",
+    "path": "API Reference / JavaScript Library",
+    "tags": [
+      "javascript",
+      "nodejs",
+      "browser",
+      "typescript"
+    ],
+    "url": "/pages/docs/index.html?id=api/javascript-library",
+    "updatedAt": "2026-02-12"
+  },
+  {
+    "id": "doc-gpu",
+    "type": "doc",
+    "title": "GPU Acceleration",
+    "summary": "Enable GPU acceleration for faster inference. Covers NVIDIA CUDA, AMD ROCm, and Apple Silicon (Metal) backends.",
+    "path": "Advanced / GPU Acceleration",
+    "tags": [
+      "gpu",
+      "nvidia",
+      "cuda",
+      "amd",
+      "rocm",
+      "apple silicon",
+      "metal"
+    ],
+    "url": "/pages/docs/index.html?id=advanced/gpu-acceleration",
+    "updatedAt": "2026-02-08"
+  },
+  {
+    "id": "doc-multi-gpu",
+    "type": "doc",
+    "title": "Multi-GPU Setup",
+    "summary": "Distribute model layers across multiple NVIDIA or AMD GPUs for large model inference and improved throughput.",
+    "path": "Advanced / Multi-GPU",
+    "tags": [
+      "multi-gpu",
+      "gpu",
+      "performance",
+      "layers"
+    ],
+    "url": "/pages/docs/index.html?id=advanced/multi-gpu",
+    "updatedAt": "2026-01-30"
+  },
+  {
+    "id": "doc-docker-deploy",
+    "type": "doc",
+    "title": "Docker Deployment",
+    "summary": "Deploy Ollama with Docker and docker-compose. Includes GPU passthrough, volume mounts, and networking.",
+    "path": "Advanced / Docker Deployment",
+    "tags": [
+      "docker",
+      "deployment",
+      "compose",
+      "gpu"
+    ],
+    "url": "/pages/docs/index.html?id=advanced/docker-deployment",
+    "updatedAt": "2026-02-01"
+  },
+  {
+    "id": "sol-llama-runner",
+    "type": "solution",
+    "title": "Error: llama runner process has terminated",
+    "summary": "Often caused by out-of-memory (OOM) issues or incompatible CUDA drivers. Step-by-step fix with driver downgrade and OLLAMA_KEEP_ALIVE.",
+    "path": "Installation \u2022 Issue #12345",
+    "tags": [
+      "cuda",
+      "oom",
+      "gpu"
+    ],
+    "url": "/pages/solutions/detail.html?id=installation/llama-runner-terminated",
+    "updatedAt": "2026-02-24"
+  },
+  {
+    "id": "sol-docker-connect",
+    "type": "solution",
+    "title": "Cannot connect to Ollama from Docker container",
+    "summary": "Set OLLAMA_HOST=0.0.0.0 to allow external connections from Docker containers. Includes docker-compose example.",
+    "path": "Configuration \u2022 Issue #8901",
+    "tags": [
+      "docker",
+      "network",
+      "OLLAMA_HOST"
+    ],
+    "url": "/pages/solutions/detail.html?id=docker/cannot-connect-from-container",
+    "updatedAt": "2026-02-23"
+  },
+  {
+    "id": "sol-high-cpu",
+    "type": "solution",
+    "title": "High CPU usage when idle on Windows",
+    "summary": "Resolving background processes not terminating correctly on Windows by configuring sleep duration and WSL2 settings.",
+    "path": "Performance \u2022 Issue #7654",
+    "tags": [
+      "windows",
+      "cpu",
+      "wsl2"
+    ],
+    "url": "/pages/solutions/detail.html?id=performance/high-cpu-idle-windows",
+    "updatedAt": "2026-02-21"
+  },
+  {
+    "id": "sol-gpu-not-detected",
+    "type": "solution",
+    "title": "GPU Not Detected \u2014 NVIDIA/AMD",
+    "summary": "Ollama falls back to CPU. Fix with CUDA driver update for NVIDIA or ROCm setup for AMD on Linux.",
+    "path": "Installation \u2022 Issue #11020",
+    "tags": [
+      "gpu",
+      "nvidia",
+      "amd",
+      "linux",
+      "cuda",
+      "rocm"
+    ],
+    "url": "/pages/solutions/detail.html?id=installation/gpu-not-detected",
+    "updatedAt": "2026-02-19"
+  },
+  {
+    "id": "sol-cors",
+    "type": "solution",
+    "title": "CORS error when calling Ollama API from browser",
+    "summary": "Set OLLAMA_ORIGINS environment variable to your app's origin to allow cross-origin requests from the browser.",
+    "path": "API & Integration \u2022 Issue #9321",
+    "tags": [
+      "cors",
+      "api",
+      "browser",
+      "OLLAMA_ORIGINS"
+    ],
+    "url": "/pages/solutions/detail.html?id=api/cors-error",
+    "updatedAt": "2026-02-10"
+  },
+  {
+    "id": "sol-gguf-import",
+    "type": "solution",
+    "title": "GGUF model import fails with 'invalid model'",
+    "summary": "Some GGUF files are incompatible. Use llama.cpp convert script or download a pre-quantized GGUF from HuggingFace.",
+    "path": "Models \u2022 Issue #6789",
+    "tags": [
+      "gguf",
+      "import",
+      "modelfile"
+    ],
+    "url": "/pages/solutions/detail.html?id=models/gguf-import-failed",
+    "updatedAt": "2026-02-05"
+  },
+  {
+    "id": "sol-slow-inference",
+    "type": "solution",
+    "title": "Slow inference speed \u2014 GPU not utilized",
+    "summary": "Inference runs entirely on CPU. Diagnose with ollama ps and check CUDA/ROCm library path.",
+    "path": "Performance \u2022 Issue #5432",
+    "tags": [
+      "performance",
+      "gpu",
+      "inference",
+      "cpu"
+    ],
+    "url": "/pages/solutions/detail.html?id=performance/slow-inference",
+    "updatedAt": "2026-01-28"
+  },
+  {
+    "id": "sol-docker-gpu",
+    "type": "solution",
+    "title": "Docker GPU not recognized inside container",
+    "summary": "Add --gpus=all flag and install NVIDIA Container Toolkit to expose GPU to the Ollama Docker container.",
+    "path": "Configuration \u2022 Issue #4210",
+    "tags": [
+      "docker",
+      "gpu",
+      "nvidia",
+      "container-toolkit"
+    ],
+    "url": "/pages/solutions/detail.html?id=docker/gpu-in-docker",
+    "updatedAt": "2026-01-15"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "projectId": "e842e2a6-321b-4c3f-b9a1-e1476943c04d",
+  "createdAt": 1771902722839,
+  "version": "1.0",
+  "startupCommands": [
+    "python -m http.server 3000"
+  ],
+  "templateId": "any"
+}

@@ -1,0 +1,36 @@
+{
+  "nav": [
+    {
+      "group": "Getting Started",
+      "items": [
+        { "title": "Installation", "href": "/pages/docs/installation/index.html", "slug": "installation" },
+        { "title": "Quickstart", "href": "/pages/docs/quickstart/index.html", "slug": "quickstart" },
+        { "title": "Configuration", "href": "/pages/docs/configuration/index.html", "slug": "configuration" }
+      ]
+    },
+    {
+      "group": "Models",
+      "items": [
+        { "title": "Model Library", "href": "/pages/docs/models/index.html", "slug": "models" },
+        { "title": "Custom Models (Modelfile)", "href": "/pages/docs/models/index.html#modelfile", "slug": "modelfile" },
+        { "title": "Importing GGUF", "href": "/pages/docs/models/index.html#gguf", "slug": "gguf" }
+      ]
+    },
+    {
+      "group": "API Reference",
+      "items": [
+        { "title": "REST API", "href": "/pages/docs/api/index.html", "slug": "api" },
+        { "title": "Python Library", "href": "/pages/docs/api/index.html#python", "slug": "python" },
+        { "title": "JavaScript Library", "href": "/pages/docs/api/index.html#javascript", "slug": "javascript" }
+      ]
+    },
+    {
+      "group": "Advanced",
+      "items": [
+        { "title": "GPU Acceleration", "href": "/pages/docs/advanced/index.html", "slug": "gpu" },
+        { "title": "Multi-GPU Setup", "href": "/pages/docs/advanced/index.html#multi-gpu", "slug": "multi-gpu" },
+        { "title": "Docker Deployment", "href": "/pages/docs/advanced/index.html#docker", "slug": "docker-deploy" }
+      ]
+    }
+  ]
+}

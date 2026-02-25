@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Resources - OllamaHub</title>
+    <meta property="og:title" content="Resources - OllamaHub">
+    <meta property="og:description" content="Discover UI clients, developer tools, extensions, and integrations built by the community to supercharge your local AI experience.">
+    <meta property="og:url" content="https://ollamahub.com/resources.html">
+    <meta property="og:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Resources - OllamaHub">
+    <meta name="twitter:description" content="Discover UI clients, developer tools, extensions, and integrations built by the community to supercharge your local AI experience.">
+    <meta name="twitter:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <link rel="canonical" href="https://ollamahub.com/resources.html">
+
+    <meta name="description" content="Discover UI clients, developer tools, extensions, and integrations built by the community to supercharge your local AI experience.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter','sans-serif'] },
+                    colors: { indigo: { 50:'#eef2ff', 100:'#e0e7ff', 500:'#6366f1', 600:'#4f46e5', 700:'#4338ca' } }
+                }
+            }
+        }
+    </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H38EBLP10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3H38EBLP10');
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0 flex items-center gap-2">
+                <a href="index.html" class="flex items-center gap-2">
+                    <i class="ph-fill ph-planet text-3xl text-indigo-600"></i>
+                    <span class="font-bold text-xl tracking-tight hidden sm:block ">OllamaHub</span>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                <a href="docs/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Docs</a>
+                <a href="solutions/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Solutions</a>
+                <a href="resources.html" class="text-indigo-600 font-medium transition-colors">Resources</a>
+                <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">About</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="header-search-input" placeholder="Search..." class="pl-10 pr-10 py-1.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-48 lg:w-64 bg-slate-50">
+                    <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 border border-slate-200 rounded px-1.5 py-0.5 bg-white">⌘K</span>
+                </div>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-900">
+                    <i class="ph ph-github-logo text-2xl"></i>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 focus:outline-none">
+                    <i class="ph ph-list text-2xl" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-nav" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3 space-y-1 shadow-md absolute w-full left-0 z-40">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Home</a>
+        <a href="docs/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Docs</a>
+        <a href="solutions/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Solutions</a>
+        <a href="resources.html" class="block px-3 py-2 rounded-md text-indigo-600 bg-indigo-50 font-medium">Resources</a>
+        <a href="about.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">About</a>
+        <div class="pt-2 pb-1">
+            <div class="relative">
+                <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="mobile-search-input" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50">
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="bg-white border-b border-slate-200 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+                    Community <span class="text-indigo-600">Resources</span>
+                </h1>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Discover UI clients, developer tools, extensions, and integrations built by the community to supercharge your local AI experience.
+                </p>
+            </div>
+        </section>
+
+        <!-- Resources Layout -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 flex flex-col md:flex-row gap-8">
+            
+            <!-- Sidebar Navigation -->
+            <aside class="w-full md:w-64 flex-shrink-0">
+                <div class="sticky top-24">
+                    <h3 class="font-semibold text-slate-900 mb-4 px-3 uppercase tracking-wider text-xs">Categories</h3>
+                    <nav class="space-y-1" id="resources-categories">
+                        <!-- Categories injected via JS or static -->
+                        <a href="#" class="category-link flex items-center justify-between px-3 py-2 bg-indigo-50 text-indigo-700 rounded-md font-medium" data-category="all">
+                            <span class="flex items-center gap-2"><i class="ph ph-squares-four"></i> All Resources</span>
+                        </a>
+                        <a href="#" class="category-link flex items-center justify-between px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md font-medium transition-colors" data-category="UI Client">
+                            <span class="flex items-center gap-2"><i class="ph ph-browser"></i> UI Clients</span>
+                        </a>
+                        <a href="#" class="category-link flex items-center justify-between px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md font-medium transition-colors" data-category="Developer Tool">
+                            <span class="flex items-center gap-2"><i class="ph ph-code"></i> Developer Tools</span>
+                        </a>
+                        <a href="#" class="category-link flex items-center justify-between px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md font-medium transition-colors" data-category="Integration">
+                            <span class="flex items-center gap-2"><i class="ph ph-plugs-connected"></i> Integrations</span>
+                        </a>
+                        <a href="#" class="category-link flex items-center justify-between px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md font-medium transition-colors" data-category="Framework">
+                            <span class="flex items-center gap-2"><i class="ph ph-robot"></i> Frameworks</span>
+                        </a>
+                    </nav>
+
+                    <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="mt-8 flex items-center justify-center gap-2 w-full py-2 px-4 border border-indigo-200 bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 transition-colors text-sm font-medium">
+                        <i class="ph ph-plus-circle"></i> Submit Resource
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Resource Grid -->
+            <div class="flex-1">
+                <!-- Sort & View Controls -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 pb-4 border-b border-slate-200">
+                    <p class="text-sm text-slate-500" id="resources-count">Showing all resources</p>
+                    
+                    <div class="flex items-center gap-4 w-full sm:w-auto">
+                        <!-- OS Filters -->
+                        <div class="flex items-center gap-3 text-sm" id="os-filters">
+                            <span class="text-slate-500 font-medium">OS:</span>
+                            <label class="flex items-center gap-1.5 cursor-pointer">
+                                <input type="checkbox" value="macOS" class="os-checkbox rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                                <i class="ph-fill ph-apple-logo text-slate-700"></i> macOS
+                            </label>
+                            <label class="flex items-center gap-1.5 cursor-pointer">
+                                <input type="checkbox" value="Windows" class="os-checkbox rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                                <i class="ph-fill ph-windows-logo text-slate-700"></i> Windows
+                            </label>
+                            <label class="flex items-center gap-1.5 cursor-pointer">
+                                <input type="checkbox" value="Linux" class="os-checkbox rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                                <i class="ph-fill ph-linux-logo text-slate-700"></i> Linux
+                            </label>
+                        </div>
+                        
+                        <div class="h-4 w-px bg-slate-300 hidden sm:block"></div>
+
+                        <!-- View Toggles -->
+                        <div class="flex bg-slate-100 p-1 rounded-lg">
+                            <button id="view-grid" class="p-1.5 rounded-md bg-white text-indigo-600 shadow-sm transition-all" title="Grid View">
+                                <i class="ph-fill ph-squares-four text-lg"></i>
+                            </button>
+                            <button id="view-list" class="p-1.5 rounded-md text-slate-500 hover:text-slate-900 transition-all" title="List View">
+                                <i class="ph-fill ph-list text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="resources-grid">
+                    <!-- Cards will be populated by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-planet text-2xl text-slate-400"></i>
+                <span class="font-semibold text-slate-600">OllamaHub</span>
+            </div>
+            <div class="flex gap-6 text-sm text-slate-500">
+                <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-600">Terms of Service</a>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="hover:text-indigo-600">Contribute</a>
+            </div>
+            <p class="text-sm text-slate-400">&copy; 2026 OllamaHub. Not officially affiliated with Ollama.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('../_data/resources.json');
+                const resources = await response.json();
+                
+                const grid = document.getElementById('resources-grid');
+                const countText = document.getElementById('resources-count');
+                const viewGridBtn = document.getElementById('view-grid');
+                const viewListBtn = document.getElementById('view-list');
+                const osCheckboxes = document.querySelectorAll('.os-checkbox');
+                
+                let currentCategory = 'all';
+                let currentView = 'grid';
+
+                const renderResources = () => {
+                    grid.innerHTML = '';
+                    
+                    const selectedOs = Array.from(osCheckboxes)
+                        .filter(cb => cb.checked)
+                        .map(cb => cb.value.toLowerCase());
+
+                    const filtered = resources.filter(r => {
+                        const matchCategory = currentCategory === 'all' || r.tags.includes(currentCategory);
+                        const matchOs = selectedOs.length === 0 || 
+                            selectedOs.some(os => r.os.map(o=>o.toLowerCase()).includes(os));
+                        return matchCategory && matchOs;
+                    });
+                    
+                    countText.textContent = `Showing ${filtered.length} resource${filtered.length !== 1 ? 's' : ''}`;
+
+                    filtered.forEach(resource => {
+                        const tagsHtml = resource.tags.map(tag => `<span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md whitespace-nowrap">${tag}</span>`).join('');
+                        
+                        const card = document.createElement('div');
+                        
+                        if (currentView === 'grid') {
+                            card.className = 'bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all flex flex-col group relative';
+                            card.innerHTML = `
+                                <div class="p-5 flex-1 flex flex-col">
+                                    <div class="w-12 h-12 rounded-lg ${resource.iconBg || 'bg-indigo-50 text-indigo-600'} flex items-center justify-center mb-4">
+                                        <i class="${resource.iconClass || 'ph-fill ph-app-window'} text-2xl"></i>
+                                    </div>
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">${resource.name}</h3>
+                                    </div>
+                                    <p class="text-sm text-slate-600 mb-4 line-clamp-3 flex-grow">${resource.description}</p>
+                                    <div class="flex flex-wrap gap-2 mb-2">
+                                        ${tagsHtml}
+                                    </div>
+                                </div>
+                                <div class="px-5 py-3 border-t border-slate-100 bg-slate-50 flex justify-end items-center">
+                                    <a href="${resource.url}" target="_blank" rel="noopener" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+                                        Visit <i class="ph ph-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            `;
+                        } else {
+                            card.className = 'bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md hover:border-indigo-300 transition-all flex flex-col sm:flex-row group relative';
+                            card.innerHTML = `
+                                <div class="p-5 flex-1 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                                    <div class="w-12 h-12 flex-shrink-0 rounded-lg ${resource.iconBg || 'bg-indigo-50 text-indigo-600'} flex items-center justify-center">
+                                        <i class="${resource.iconClass || 'ph-fill ph-app-window'} text-2xl"></i>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors mb-1">${resource.name}</h3>
+                                        <p class="text-sm text-slate-600 line-clamp-2">${resource.description}</p>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2 sm:w-48 sm:justify-end">
+                                        ${tagsHtml}
+                                    </div>
+                                </div>
+                                <div class="px-5 py-4 border-t sm:border-t-0 sm:border-l border-slate-100 bg-slate-50 flex items-center justify-center sm:w-32">
+                                    <a href="${resource.url}" target="_blank" rel="noopener" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+                                        Visit <i class="ph ph-arrow-up-right"></i>
+                                    </a>
+                                </div>
+                            `;
+                        }
+                        grid.appendChild(card);
+                    });
+                };
+
+                const updateViewToggleStyles = () => {
+                    if (currentView === 'grid') {
+                        viewGridBtn.className = 'p-1.5 rounded-md bg-white text-indigo-600 shadow-sm transition-all';
+                        viewListBtn.className = 'p-1.5 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+                        grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6';
+                    } else {
+                        viewListBtn.className = 'p-1.5 rounded-md bg-white text-indigo-600 shadow-sm transition-all';
+                        viewGridBtn.className = 'p-1.5 rounded-md text-slate-500 hover:text-slate-900 transition-all';
+                        grid.className = 'grid grid-cols-1 gap-4';
+                    }
+                };
+
+                viewGridBtn.addEventListener('click', () => {
+                    currentView = 'grid';
+                    updateViewToggleStyles();
+                    renderResources();
+                });
+
+                viewListBtn.addEventListener('click', () => {
+                    currentView = 'list';
+                    updateViewToggleStyles();
+                    renderResources();
+                });
+                
+                osCheckboxes.forEach(cb => {
+                    cb.addEventListener('change', renderResources);
+                });
+
+                document.querySelectorAll('.category-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = e.currentTarget;
+                        currentCategory = target.getAttribute('data-category');
+                        
+                        document.querySelectorAll('.category-link').forEach(l => {
+                            l.classList.remove('bg-indigo-50', 'text-indigo-700');
+                            l.classList.add('text-slate-600', 'hover:bg-slate-100');
+                        });
+                        target.classList.remove('text-slate-600', 'hover:bg-slate-100');
+                        target.classList.add('bg-indigo-50', 'text-indigo-700');
+                        
+                        renderResources();
+                    });
+                });
+                
+                updateViewToggleStyles();
+                renderResources();
+            } catch (err) {
+                console.error("Failed to load resources:", err);
+            }
+        });
+    </script>
+</body>
+</html>

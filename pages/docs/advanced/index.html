@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Advanced: GPU & Docker - Docs - OllamaHub</title>
+    <meta property="og:title" content="Advanced: GPU & Docker - Docs - OllamaHub">
+    <meta property="og:description" content="Advanced configurations for Ollama, including multi-GPU setups, memory management, and Docker deployments.">
+    <meta property="og:url" content="https://ollamahub.com/docs/advanced/index.html">
+    <meta property="og:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced: GPU & Docker - Docs - OllamaHub">
+    <meta name="twitter:description" content="Advanced configurations for Ollama, including multi-GPU setups, memory management, and Docker deployments.">
+    <meta name="twitter:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <link rel="canonical" href="https://ollamahub.com/docs/advanced/index.html">
+
+    <meta name="description" content="Advanced configurations for Ollama, including multi-GPU setups, memory management, and Docker deployments.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter','sans-serif'], mono: ['JetBrains Mono','monospace'] },
+                    colors: { indigo: { 50:'#eef2ff', 100:'#e0e7ff', 500:'#6366f1', 600:'#4f46e5', 700:'#4338ca' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', monospace; }
+        .prose h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 2.5rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e2e8f0; }
+        .prose h3 { font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+        .prose p { color: #475569; margin-bottom: 1rem; line-height: 1.75; }
+        .prose a { color: #4f46e5; text-decoration: underline; }
+        .prose ul { list-style: disc; padding-left: 1.5rem; color: #475569; margin-bottom: 1rem; }
+        .prose li { margin-bottom: 0.25rem; }
+        .prose strong { color: #1e293b; font-weight: 600; }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H38EBLP10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3H38EBLP10');
+</script>
+</head>
+<body class="bg-white text-slate-900 min-h-screen flex flex-col">
+
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0 flex items-center gap-2">
+                <a href="../../index.html" class="flex items-center gap-2">
+                    <i class="ph-fill ph-planet text-3xl text-indigo-600"></i>
+                    <span class="font-bold text-xl tracking-tight hidden sm:block ">OllamaHub</span>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="../../index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                <a href="../../docs/index.html" class="text-indigo-600 font-medium transition-colors">Docs</a>
+                <a href="../../solutions/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Solutions</a>
+                <a href="../../resources.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Resources</a>
+                <a href="../../about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">About</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="header-search-input" placeholder="Search..." class="pl-10 pr-10 py-1.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-48 lg:w-64 bg-slate-50">
+                    <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 border border-slate-200 rounded px-1.5 py-0.5 bg-white">⌘K</span>
+                </div>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-900">
+                    <i class="ph ph-github-logo text-2xl"></i>
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-500 hover:text-slate-900 focus:outline-none">
+                    <i class="ph ph-list text-2xl" id="mobile-menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-nav" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3 space-y-1 shadow-md absolute w-full left-0 z-40">
+        <a href="../../index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Home</a>
+        <a href="../../docs/index.html" class="block px-3 py-2 rounded-md text-indigo-600 bg-indigo-50 font-medium">Docs</a>
+        <a href="../../solutions/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Solutions</a>
+        <a href="../../resources.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Resources</a>
+        <a href="../../about.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">About</a>
+        <div class="pt-2 pb-1">
+            <div class="relative">
+                <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="mobile-search-input" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50">
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div class="flex-grow max-w-screen-2xl mx-auto w-full px-4 sm:px-6 lg:px-8 flex items-stretch">
+
+        <!-- Left Sidebar -->
+        <aside class="w-64 flex-shrink-0 border-r border-slate-200 py-8 pr-6 hidden md:block overflow-y-auto sticky top-16" style="height:calc(100vh - 4rem);">
+            <nav class="space-y-8">
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Getting Started</h3>
+                    <ul class="space-y-1">
+                        <li><a href="../index.html" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Installation</a></li>
+                        <li><a href="../quickstart/index.html" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Quickstart</a></li>
+                        <li><a href="../configuration/index.html" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Configuration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Models</h3>
+                    <ul class="space-y-1">
+                        <li><a href="../models/index.html" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Model Library</a></li>
+                        <li><a href="../models/index.html#modelfile" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Custom Models (Modelfile)</a></li>
+                        <li><a href="../models/index.html#gguf" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Importing GGUF</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">API Reference</h3>
+                    <ul class="space-y-1">
+                        <li><a href="../api/index.html" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">REST API</a></li>
+                        <li><a href="../api/index.html#python" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Python Library</a></li>
+                        <li><a href="../api/index.html#javascript" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">JavaScript Library</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-slate-900 mb-3 text-xs uppercase tracking-wider">Advanced</h3>
+                    <ul class="space-y-1">
+                        <li><a href="index.html" class="block text-indigo-600 font-medium text-sm py-1 px-2 rounded bg-indigo-50">GPU Acceleration</a></li>
+                        <li><a href="#multi-gpu" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Multi-GPU Setup</a></li>
+                        <li><a href="#docker" class="block text-slate-600 hover:text-indigo-600 text-sm py-1 px-2 rounded hover:bg-slate-50 transition-colors">Docker Deployment</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-grow py-8 md:pl-8 lg:pl-12 max-w-3xl overflow-hidden">
+            <nav class="flex text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1">
+                    <li><a href="../index.html" class="hover:text-indigo-600">Docs</a></li>
+                    <li><i class="ph ph-caret-right text-xs mx-1"></i><span class="text-slate-800 font-medium">Advanced</span></li>
+                </ol>
+            </nav>
+
+            <article class="prose max-w-none">
+                <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 mb-4" id="top">Advanced Configurations</h1>
+                <p class="text-lg text-slate-600 mb-6">Learn how to maximize Ollama's performance with multi-GPU setups, advanced memory management, and containerized deployments using Docker.</p>
+
+                <!-- GPU Acceleration -->
+                <h2 id="gpu">GPU Acceleration</h2>
+                <p>Ollama automatically detects and utilizes available GPUs to accelerate model inference. Supported backends include:</p>
+                <ul>
+                    <li><strong>NVIDIA (CUDA):</strong> Most consumer and datacenter NVIDIA GPUs.</li>
+                    <li><strong>AMD (ROCm):</strong> Supported Radeon and Instinct GPUs.</li>
+                    <li><strong>Apple Silicon (Metal):</strong> Native acceleration on M1, M2, and M3 series chips.</li>
+                </ul>
+
+                <h3 id="multi-gpu">Multi-GPU Setup</h3>
+                <p>Ollama can split large models across multiple GPUs. This is handled automatically, but you can control which GPUs Ollama uses by setting environment variables.</p>
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-bash"># Linux / macOS (CUDA) - Use GPU 0 and 2
+export CUDA_VISIBLE_DEVICES=0,2
+ollama serve
+
+# AMD ROCm
+export HIP_VISIBLE_DEVICES=0,1
+ollama serve</code></pre>
+                </div>
+
+                <h3 id="vram-management">VRAM Management</h3>
+                <p>Models are loaded into VRAM to ensure the fastest generation speeds. If a model is too large for your GPU(s), Ollama will offload layers to the CPU RAM, which is significantly slower.</p>
+                <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mb-6">
+                    <p class="text-indigo-800 text-sm mb-0"><strong>Tip:</strong> You can observe how much VRAM a model requires by running <code>ollama run &lt;model&gt; --verbose</code> and checking the memory metrics.</p>
+                </div>
+
+                <!-- Docker Deployment -->
+                <h2 id="docker">Docker Deployment</h2>
+                <p>Deploying Ollama in Docker is ideal for server environments and cloud infrastructure. The official Ollama image supports CPU and GPU execution.</p>
+
+                <h3>CPU-only Deployment</h3>
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-bash">docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama</code></pre>
+                </div>
+
+                <h3>NVIDIA GPU Deployment</h3>
+                <p>To use NVIDIA GPUs in Docker, install the <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html" target="_blank">NVIDIA Container Toolkit</a> first, then run:</p>
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-bash">docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama</code></pre>
+                </div>
+
+                <h3>AMD GPU Deployment</h3>
+                <p>For AMD GPUs using ROCm, use the <code>rocm</code> image tag and pass the required devices:</p>
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-bash">docker run -d --device /dev/kfd --device /dev/dri -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama:rocm</code></pre>
+                </div>
+
+                <!-- Customizing Server Options -->
+                <h2 id="server-options">Customizing Server Options</h2>
+                <p>You can adjust how the Ollama server behaves using environment variables. When using Docker, pass these with the <code>-e</code> flag.</p>
+                <ul>
+                    <li><code>OLLAMA_HOST</code>: The IP and port to bind to (e.g., <code>0.0.0.0:11434</code> for external access).</li>
+                    <li><code>OLLAMA_ORIGINS</code>: A comma-separated list of allowed origins for CORS.</li>
+                    <li><code>OLLAMA_MODELS</code>: Directory where models are stored.</li>
+                    <li><code>OLLAMA_KEEP_ALIVE</code>: Duration models stay in memory after a request (e.g., <code>5m</code>).</li>
+                </ul>
+
+                <h3 id="docker-compose">Docker Compose Example</h3>
+                <p>A typical <code>docker-compose.yml</code> for a robust Ollama setup:</p>
+                <div class="relative group mb-6">
+                    <pre class="!bg-[#1d1f21] rounded-lg"><code class="language-yaml">version: '3.8'
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+      - OLLAMA_ORIGINS=http://localhost:3000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+volumes:
+  ollama_data:</code></pre>
+                </div>
+            </article>
+
+            <div class="mt-12 pt-8 border-t border-slate-200 flex justify-between items-center">
+                <a href="../api/index.html" class="text-indigo-600 font-medium flex items-center gap-2 hover:text-indigo-700">
+                    <i class="ph ph-arrow-left"></i>
+                    <div>
+                        <div class="text-xs text-slate-500 font-normal">Previous</div>
+                        <div>REST API Reference</div>
+                    </div>
+                </a>
+                <a href="../../solutions/index.html" class="text-indigo-600 font-medium flex items-center gap-2 text-right hover:text-indigo-700">
+                    <div>
+                        <div class="text-xs text-slate-500 font-normal">Next</div>
+                        <div>Solutions</div>
+                    </div>
+                    <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+            <div class="mt-8 mb-8 flex items-center justify-between text-sm text-slate-500">
+                <span>Last updated: Feb 24, 2026</span>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="hover:text-slate-900 flex items-center gap-1">
+                    <i class="ph ph-pencil-simple"></i> Edit on GitHub
+                </a>
+            </div>
+        </main>
+
+        <!-- Right TOC -->
+        <aside class="w-56 flex-shrink-0 py-8 pl-6 hidden xl:block sticky top-16" style="height:calc(100vh - 4rem);">
+            <div class="border-l border-slate-200 pl-4">
+                <h4 class="font-semibold text-slate-900 mb-3 text-sm">On this page</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#gpu" class="block text-slate-600 hover:text-indigo-600 py-0.5">GPU Acceleration</a></li>
+                    <li><a href="#multi-gpu" class="block text-slate-600 hover:text-indigo-600 py-0.5 pl-3 text-xs">Multi-GPU Setup</a></li>
+                    <li><a href="#vram-management" class="block text-slate-600 hover:text-indigo-600 py-0.5 pl-3 text-xs">VRAM Management</a></li>
+                    <li><a href="#docker" class="block text-slate-600 hover:text-indigo-600 py-0.5">Docker Deployment</a></li>
+                    <li><a href="#server-options" class="block text-slate-600 hover:text-indigo-600 py-0.5">Server Options</a></li>
+                    <li><a href="#docker-compose" class="block text-slate-600 hover:text-indigo-600 py-0.5 pl-3 text-xs">Docker Compose</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-planet text-2xl text-slate-400"></i>
+                <span class="font-semibold text-slate-600">OllamaHub</span>
+            </div>
+            <div class="flex gap-6 text-sm text-slate-500">
+                <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-600">Terms of Service</a>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="hover:text-indigo-600">Contribute</a>
+            </div>
+            <p class="text-sm text-slate-400">&copy; 2026 OllamaHub. Not officially affiliated with Ollama.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+    <script src="../../../js/main.js"></script>
+</body>
+</html>

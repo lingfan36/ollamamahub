@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>https://ollamahub.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/index.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/docs/index.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/docs/quickstart/index.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/docs/configuration/index.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/docs/installation/index.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/docs/models/index.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/docs/api/index.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/docs/advanced/index.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/solutions/index.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/solutions/docker/index.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/solutions/installation/index.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/solutions/performance/index.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/resources.html</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/about.html</loc><priority>0.7</priority><changefreq>yearly</changefreq></url>
+    <url><loc>https://ollamahub.com/pages/search.html</loc><priority>0.5</priority><changefreq>monthly</changefreq></url>
+</urlset>

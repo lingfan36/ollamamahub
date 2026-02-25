@@ -1,0 +1,171 @@
+[
+  {
+    "id": 1,
+    "title": "Error: llama runner process has terminated",
+    "summary": "Often caused by out-of-memory (OOM) issues or incompatible CUDA drivers. The solution involves downgrading drivers or setting OLLAMA_KEEP_ALIVE=0.",
+    "category": "Bug",
+    "categoryColor": "red",
+    "tags": [
+      "cuda",
+      "oom",
+      "gpu"
+    ],
+    "votes": 124,
+    "comments": 12,
+    "updatedAt": "2h ago",
+    "href": "detail.html?id=installation/llama-runner-terminated",
+    "slug": "llama-runner-terminated"
+  },
+  {
+    "id": 2,
+    "title": "Cannot connect to Ollama from Docker container",
+    "summary": "How to correctly set the OLLAMA_HOST environment variable to 0.0.0.0 to allow external network connections from other Docker containers like Open WebUI.",
+    "category": "Configuration",
+    "categoryColor": "blue",
+    "tags": [
+      "docker",
+      "network"
+    ],
+    "votes": 89,
+    "comments": 5,
+    "updatedAt": "1d ago",
+    "href": "detail.html?id=docker/cannot-connect-from-container",
+    "slug": "docker-cannot-connect"
+  },
+  {
+    "id": 3,
+    "title": "High CPU usage when idle on Windows",
+    "summary": "Resolving background processes not terminating correctly on Windows subsystem by configuring the sleep duration and verifying WSL2 settings.",
+    "category": "Performance",
+    "categoryColor": "amber",
+    "tags": [
+      "windows",
+      "cpu"
+    ],
+    "votes": 56,
+    "comments": 22,
+    "updatedAt": "3d ago",
+    "href": "detail.html?id=performance/high-cpu-idle-windows",
+    "slug": "high-cpu-windows"
+  },
+  {
+    "id": 4,
+    "title": "GPU Not Detected — NVIDIA/AMD",
+    "summary": "Ollama fails to detect your GPU at startup. This guide covers NVIDIA CUDA driver requirements and AMD ROCm setup for Linux.",
+    "category": "Installation",
+    "categoryColor": "purple",
+    "tags": [
+      "gpu",
+      "nvidia",
+      "amd",
+      "linux"
+    ],
+    "votes": 47,
+    "comments": 8,
+    "updatedAt": "5d ago",
+    "href": "detail.html?id=installation/gpu-not-detected",
+    "slug": "gpu-not-detected"
+  },
+  {
+    "id": 5,
+    "title": "CORS error when calling Ollama API from browser",
+    "summary": "When calling the Ollama REST API directly from a browser-side JavaScript app, you may encounter CORS errors. Set OLLAMA_ORIGINS to fix this.",
+    "category": "API & Integration",
+    "categoryColor": "green",
+    "tags": [
+      "cors",
+      "api",
+      "javascript"
+    ],
+    "votes": 41,
+    "comments": 6,
+    "updatedAt": "1w ago",
+    "href": "detail.html?id=api/cors-error",
+    "slug": "cors-error"
+  },
+  {
+    "id": 6,
+    "title": "GGUF model import fails with 'invalid model'",
+    "summary": "Some GGUF files downloaded from HuggingFace are incompatible with Ollama's parser. Converting with llama.cpp or choosing the correct quant resolves this.",
+    "category": "Models",
+    "categoryColor": "indigo",
+    "tags": [
+      "gguf",
+      "modelfile",
+      "import"
+    ],
+    "votes": 38,
+    "comments": 4,
+    "updatedAt": "2w ago",
+    "href": "detail.html?id=models/gguf-import-failed",
+    "slug": "gguf-import-failed"
+  },
+  {
+    "id": 7,
+    "title": "Slow inference speed — GPU not utilized",
+    "summary": "Inference runs on CPU even though a GPU is present. This is usually due to missing ROCm/CUDA libraries or mismatched quantization format.",
+    "category": "Performance",
+    "categoryColor": "amber",
+    "tags": [
+      "performance",
+      "gpu",
+      "inference"
+    ],
+    "votes": 35,
+    "comments": 11,
+    "updatedAt": "2w ago",
+    "href": "detail.html?id=performance/slow-inference",
+    "slug": "slow-inference"
+  },
+  {
+    "id": 8,
+    "title": "Docker GPU not recognized inside container",
+    "summary": "Running Ollama in Docker without --gpus=all or without NVIDIA Container Toolkit causes the GPU to be invisible inside the container.",
+    "category": "Configuration",
+    "categoryColor": "blue",
+    "tags": [
+      "docker",
+      "gpu",
+      "nvidia"
+    ],
+    "votes": 31,
+    "comments": 7,
+    "updatedAt": "3w ago",
+    "href": "detail.html?id=docker/gpu-in-docker",
+    "slug": "docker-gpu"
+  },
+  {
+    "id": 9,
+    "title": "Model download stuck or extremely slow",
+    "summary": "ollama pull hangs or downloads at <1 MB/s. Proxy settings, DNS issues, or regional server routing are common causes.",
+    "category": "Models",
+    "categoryColor": "indigo",
+    "tags": [
+      "download",
+      "network",
+      "proxy"
+    ],
+    "votes": 29,
+    "comments": 3,
+    "updatedAt": "1mo ago",
+    "href": "detail.html?id=models/model-download-slow",
+    "slug": "model-download-slow"
+  },
+  {
+    "id": 10,
+    "title": "Linux install script fails — permission denied",
+    "summary": "The official install.sh script requires sudo. If it fails with permission errors, check your shell configuration and /usr/local/bin write access.",
+    "category": "Installation",
+    "categoryColor": "purple",
+    "tags": [
+      "linux",
+      "install",
+      "sudo"
+    ],
+    "votes": 23,
+    "comments": 2,
+    "updatedAt": "1mo ago",
+    "href": "detail.html?id=installation/install-script-fails-linux",
+    "slug": "linux-install-fails"
+  }
+]

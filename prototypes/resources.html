@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - OllamaHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        indigo: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H38EBLP10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3H38EBLP10');
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+                    <i class="ph-fill ph-planet text-3xl text-indigo-600"></i>
+                    <span class="font-bold text-xl tracking-tight">OllamaHub</span>
+                </a>
+                
+                <!-- Navigation (Desktop) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                    <a href="docs/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Docs</a>
+                    <a href="solutions/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Solutions</a>
+                    <a href="resources.html" class="text-indigo-600 font-medium">Resources</a>
+                    <a href="about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">About</a>
+                </nav>
+
+                <!-- Search & Actions -->
+                <div class="flex items-center gap-4">
+                    <div class="hidden lg:block relative">
+                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" placeholder="Search resources..." class="pl-10 pr-4 py-2 border border-slate-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 w-64 bg-slate-50 transition-all">
+                        <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-slate-400 border border-slate-200 rounded px-1.5 py-0.5">⌘K</span>
+                    </div>
+                    <a href="#" class="text-slate-500 hover:text-slate-900">
+                        <i class="ph ph-github-logo text-2xl"></i>
+                    </a>
+                    <button class="md:hidden text-slate-500 hover:text-slate-900">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section class="bg-white border-b border-slate-200 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+                    Community <span class="text-indigo-600">Resources</span>
+                </h1>
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Discover UI clients, developer tools, extensions, and integrations built by the community to supercharge your local AI experience.
+                </p>
+            </div>
+        </section>
+
+        <!-- Resources Layout -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 flex flex-col md:flex-row gap-8">
+            
+            <!-- Sidebar Navigation -->
+            <aside class="w-full md:w-64 flex-shrink-0">
+                <div class="sticky top-24">
+                    <h3 class="font-semibold text-slate-900 mb-4 px-3 uppercase tracking-wider text-xs">Categories</h3>
+                    <nav class="space-y-1">
+                        <a href="#" class="flex items-center justify-between px-3 py-2 bg-indigo-50 text-indigo-700 rounded-md font-medium">
+                            <span class="flex items-center gap-2"><i class="ph ph-squares-four"></i> All Resources</span>
+                            <span class="bg-indigo-100 text-indigo-700 py-0.5 px-2 rounded-full text-xs">142</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md font-medium transition-colors">
+                            <span class="flex items-center gap-2"><i class="ph ph-browser"></i> UI Clients</span>
+                            <span class="bg-slate-100 text-slate-500 py-0.5 px-2 rounded-full text-xs">38</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md font-medium transition-colors">
+                            <span class="flex items-center gap-2"><i class="ph ph-code"></i> Developer Tools</span>
+                            <span class="bg-slate-100 text-slate-500 py-0.5 px-2 rounded-full text-xs">56</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md font-medium transition-colors">
+                            <span class="flex items-center gap-2"><i class="ph ph-plugs-connected"></i> Integrations</span>
+                            <span class="bg-slate-100 text-slate-500 py-0.5 px-2 rounded-full text-xs">24</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between px-3 py-2 text-slate-600 hover:bg-slate-100 hover:text-slate-900 rounded-md font-medium transition-colors">
+                            <span class="flex items-center gap-2"><i class="ph ph-robot"></i> Agents & Frameworks</span>
+                            <span class="bg-slate-100 text-slate-500 py-0.5 px-2 rounded-full text-xs">24</span>
+                        </a>
+                    </nav>
+
+                    <div class="mt-8">
+                        <h3 class="font-semibold text-slate-900 mb-4 px-3 uppercase tracking-wider text-xs">Filter By OS</h3>
+                        <div class="px-3 space-y-2">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                                <span class="text-sm text-slate-700">Windows</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                                <span class="text-sm text-slate-700">macOS</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500">
+                                <span class="text-sm text-slate-700">Linux</span>
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" class="rounded border-slate-300 text-indigo-600 focus:ring-indigo-500" checked>
+                                <span class="text-sm text-slate-700">Web / Cross-platform</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="mt-8 flex items-center justify-center gap-2 w-full py-2 px-4 border border-indigo-200 bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 transition-colors text-sm font-medium">
+                        <i class="ph ph-plus-circle"></i> Submit Resource
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Resource Grid -->
+            <div class="flex-1">
+                <!-- Sort & View Controls -->
+                <div class="flex justify-between items-center mb-6 pb-4 border-b border-slate-200">
+                    <p class="text-sm text-slate-500">Showing <span class="font-semibold text-slate-900">1-9</span> of 142 resources</p>
+                    <div class="flex items-center gap-3">
+                        <select class="text-sm border-slate-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 py-1.5 pl-3 pr-8">
+                            <option>Most Popular</option>
+                            <option>Recently Added</option>
+                            <option>Alphabetical</option>
+                        </select>
+                        <div class="hidden sm:flex border border-slate-200 rounded-md overflow-hidden">
+                            <button class="p-1.5 bg-slate-100 text-slate-900"><i class="ph ph-grid-four text-lg"></i></button>
+                            <button class="p-1.5 bg-white text-slate-400 hover:text-slate-900"><i class="ph ph-list text-lg"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Card 1 -->
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all flex flex-col group relative">
+                        <div class="p-5 flex-1">
+                            <div class="w-12 h-12 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-chat-centered-text text-2xl"></i>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">Open WebUI</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                                User-friendly WebUI for LLMs. A self-hosted WebUI designed to run entirely offline. Supports Ollama and OpenAI-compatible APIs.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">UI Client</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">Docker</span>
+                            </div>
+                        </div>
+                        <div class="px-5 py-3 border-t border-slate-100 bg-slate-50 flex justify-between items-center">
+                            <div class="flex items-center gap-1 text-sm text-slate-500">
+                                <i class="ph-fill ph-star text-amber-400"></i> 45k
+                            </div>
+                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+                                Visit <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all flex flex-col group relative">
+                        <div class="p-5 flex-1">
+                            <div class="w-12 h-12 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-tree-structure text-2xl"></i>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">LangChain</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                                Building applications with LLMs through composability. Official support and native integrations for Ollama models.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">Framework</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">Python</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">JS</span>
+                            </div>
+                        </div>
+                        <div class="px-5 py-3 border-t border-slate-100 bg-slate-50 flex justify-between items-center">
+                            <div class="flex items-center gap-1 text-sm text-slate-500">
+                                <i class="ph-fill ph-star text-amber-400"></i> 82k
+                            </div>
+                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+                                Visit <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all flex flex-col group relative">
+                        <div class="p-5 flex-1">
+                            <div class="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-folder-notch text-2xl"></i>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">AnythingLLM</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                                The all-in-one Desktop & Docker AI application with full RAG and AI Agent capabilities. One-click integration with Ollama.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">UI Client</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">Desktop</span>
+                            </div>
+                        </div>
+                        <div class="px-5 py-3 border-t border-slate-100 bg-slate-50 flex justify-between items-center">
+                            <div class="flex items-center gap-1 text-sm text-slate-500">
+                                <i class="ph-fill ph-star text-amber-400"></i> 18k
+                            </div>
+                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+                                Visit <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all flex flex-col group relative">
+                        <div class="p-5 flex-1">
+                            <div class="w-12 h-12 rounded-lg bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-database text-2xl"></i>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">LlamaIndex</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                                Data framework for your LLM applications. Provides a central interface to connect your custom data sources to Ollama LLMs.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">Framework</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">RAG</span>
+                            </div>
+                        </div>
+                        <div class="px-5 py-3 border-t border-slate-100 bg-slate-50 flex justify-between items-center">
+                            <div class="flex items-center gap-1 text-sm text-slate-500">
+                                <i class="ph-fill ph-star text-amber-400"></i> 32k
+                            </div>
+                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+                                Visit <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all flex flex-col group relative">
+                        <div class="p-5 flex-1">
+                            <div class="w-12 h-12 rounded-lg bg-slate-800 text-white flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-terminal-window text-2xl"></i>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">Ollama-Python</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                                Official Python library for the Ollama API. Easily integrate local model inference into your Python scripts and backend apps.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">Library</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">Python</span>
+                            </div>
+                        </div>
+                        <div class="px-5 py-3 border-t border-slate-100 bg-slate-50 flex justify-between items-center">
+                            <div class="flex items-center gap-1 text-sm text-slate-500">
+                                <i class="ph-fill ph-star text-amber-400"></i> 6.5k
+                            </div>
+                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+                                Visit <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-indigo-300 transition-all flex flex-col group relative">
+                        <div class="p-5 flex-1">
+                            <div class="w-12 h-12 rounded-lg bg-yellow-100 text-yellow-600 flex items-center justify-center mb-4">
+                                <i class="ph-fill ph-discord-logo text-2xl"></i>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-slate-900 text-lg group-hover:text-indigo-600 transition-colors">Ollama Discord Bot</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 mb-4 line-clamp-3">
+                                A simple Discord bot powered by Ollama. Let your community chat with local LLMs directly within your Discord server.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">Integration</span>
+                                <span class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-md">Discord</span>
+                            </div>
+                        </div>
+                        <div class="px-5 py-3 border-t border-slate-100 bg-slate-50 flex justify-between items-center">
+                            <div class="flex items-center gap-1 text-sm text-slate-500">
+                                <i class="ph-fill ph-star text-amber-400"></i> 1.2k
+                            </div>
+                            <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-700 flex items-center gap-1">
+                                Visit <i class="ph ph-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-8 flex items-center justify-center gap-2">
+                    <button class="p-2 border border-slate-200 rounded-md text-slate-400 hover:text-slate-900 hover:bg-slate-50 disabled:opacity-50" disabled>
+                        <i class="ph ph-caret-left"></i>
+                    </button>
+                    <button class="w-10 h-10 border border-indigo-600 bg-indigo-50 text-indigo-600 rounded-md font-medium">1</button>
+                    <button class="w-10 h-10 border border-slate-200 text-slate-600 hover:bg-slate-50 rounded-md font-medium">2</button>
+                    <button class="w-10 h-10 border border-slate-200 text-slate-600 hover:bg-slate-50 rounded-md font-medium">3</button>
+                    <span class="text-slate-400 px-2">...</span>
+                    <button class="w-10 h-10 border border-slate-200 text-slate-600 hover:bg-slate-50 rounded-md font-medium">16</button>
+                    <button class="p-2 border border-slate-200 rounded-md text-slate-600 hover:text-slate-900 hover:bg-slate-50">
+                        <i class="ph ph-caret-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <i class="ph-fill ph-planet text-2xl text-slate-400"></i>
+                <span class="font-semibold text-slate-600">OllamaHub</span>
+            </div>
+            <div class="flex space-x-6 text-sm text-slate-500">
+                <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-600">Terms of Service</a>
+                <a href="#" class="hover:text-indigo-600">Contribute</a>
+            </div>
+            <p class="mt-4 md:mt-0 text-sm text-slate-400">
+                &copy; 2026 OllamaHub. Not officially affiliated with Ollama.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

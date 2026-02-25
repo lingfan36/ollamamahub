@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - OllamaHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        indigo: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H38EBLP10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3H38EBLP10');
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i class="ph-fill ph-planet text-3xl text-indigo-600"></i>
+                        <span class="font-bold text-xl tracking-tight">OllamaHub</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation (Desktop) -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                    <a href="docs/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Docs</a>
+                    <a href="solutions/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Solutions</a>
+                    <a href="about.html" class="text-indigo-600 font-medium border-b-2 border-indigo-600 px-1 py-5 -mb-5">About</a>
+                </nav>
+
+                <!-- Search & Actions -->
+                <div class="flex items-center gap-4">
+                    <div class="hidden lg:block relative">
+                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" placeholder="Search docs, issues..." class="pl-10 pr-4 py-2 border border-slate-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 w-64 bg-slate-50 transition-all">
+                        <span class="absolute right-3 top-1/2 transform -translate-y-1/2 text-xs text-slate-400 border border-slate-200 rounded px-1.5 py-0.5">⌘K</span>
+                    </div>
+                    <a href="#" class="text-slate-500 hover:text-slate-900">
+                        <i class="ph ph-github-logo text-2xl"></i>
+                    </a>
+                    <button class="md:hidden text-slate-500 hover:text-slate-900">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="bg-white border-b border-slate-200 py-16 sm:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                    About <span class="text-indigo-600">OllamaHub</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
+                    The bridge connecting developers and large language models, making local deployment and applications accessible to everyone.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+        <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            
+            <div class="prose prose-slate max-w-none prose-lg">
+                <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-2">Our Vision</h2>
+                <p class="text-slate-600 mb-12 leading-relaxed">
+                    With the rapid development of open-source large language models, we aim to build a neutral, open technical community through <strong>OllamaHub</strong>. Whether you are an AI researcher, software engineer, or personal enthusiast, you can find the best practices, model configuration guides, and complete application solutions for Ollama here. We are dedicated to lowering the barrier to using LLMs and promoting the implementation of AI technology across various business scenarios.
+                </p>
+
+                <h2 class="text-3xl font-bold text-slate-900 mb-8 border-b border-slate-200 pb-2">Core Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-lg flex items-center justify-center text-indigo-600 mb-4">
+                            <i class="ph-fill ph-book-open text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Comprehensive Documentation</h3>
+                        <p class="text-slate-600 text-sm">Providing official and community documentation covering everything from basic installation to advanced configuration and API integration.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-emerald-50 rounded-lg flex items-center justify-center text-emerald-600 mb-4">
+                            <i class="ph-fill ph-lightbulb text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Rich Solutions</h3>
+                        <p class="text-slate-600 text-sm">Collecting real-world business scenarios, offering out-of-the-box architectural designs and code templates.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-purple-50 rounded-lg flex items-center justify-center text-purple-600 mb-4">
+                            <i class="ph-fill ph-users text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Active Community</h3>
+                        <p class="text-slate-600 text-sm">Gathering frontline developers to share troubleshooting experiences and discuss the technical details of LLM application implementation.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-orange-50 rounded-lg flex items-center justify-center text-orange-600 mb-4">
+                            <i class="ph-fill ph-rocket text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Latest Model News</h3>
+                        <p class="text-slate-600 text-sm">Tracking the latest release dynamics of major open-source models, providing objective performance evaluations and hardware recommendations.</p>
+                    </div>
+                </div>
+
+                <h2 class="text-3xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-2">Contact Us</h2>
+                <p class="text-slate-600 mb-6">
+                    If you have any questions, suggestions, or would like to contribute content to the community, please feel free to reach out to us through the following channels:
+                </p>
+                <ul class="list-none space-y-4 mb-8 p-0">
+                    <li class="flex items-center gap-3 text-slate-700 m-0">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+                            <i class="ph-fill ph-envelope-simple text-xl text-slate-500"></i>
+                        </div>
+                        <a href="mailto:contact@ollamahub.com" class="hover:text-indigo-600 font-medium transition-colors no-underline">contact@ollamahub.com</a>
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700 m-0">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+                            <i class="ph-fill ph-github-logo text-xl text-slate-500"></i>
+                        </div>
+                        <a href="https://github.com" target="_blank" class="hover:text-indigo-600 font-medium transition-colors no-underline">GitHub Issue / PR</a>
+                    </li>
+                    <li class="flex items-center gap-3 text-slate-700 m-0">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center">
+                            <i class="ph-fill ph-twitter-logo text-xl text-slate-500"></i>
+                        </div>
+                        <a href="#" class="hover:text-indigo-600 font-medium transition-colors no-underline">@OllamaHub_Official</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <i class="ph-fill ph-planet text-2xl text-slate-400"></i>
+                <span class="font-semibold text-slate-600">OllamaHub</span>
+            </div>
+            <div class="flex space-x-6 text-sm text-slate-500">
+                <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-600">Terms of Service</a>
+                <a href="#" class="hover:text-indigo-600">Contribute</a>
+            </div>
+            <p class="mt-4 md:mt-0 text-sm text-slate-400">
+                &copy; 2026 OllamaHub. Not officially affiliated with Ollama.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

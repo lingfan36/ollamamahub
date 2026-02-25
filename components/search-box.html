@@ -1,0 +1,26 @@
+<div id="search-modal" class="search-modal" style="display: none;">
+  <div class="search-overlay" onclick="closeSearch()"></div>
+  <div class="search-container">
+    <div class="search-header">
+      <input type="text" id="search-input" placeholder="Search documentation, solutions..." autocomplete="off">
+      <button class="close-btn" onclick="closeSearch()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="search-results-area">
+      <div id="search-results" class="search-results">
+        <!-- Results will be injected here -->
+        <div class="search-empty-state">
+          <p>Type to start searching...</p>
+        </div>
+      </div>
+    </div>
+    <div class="search-footer">
+      <div class="search-shortcuts">
+        <kbd>↑</kbd> <kbd>↓</kbd> to navigate
+        <kbd>Enter</kbd> to select
+        <kbd>ESC</kbd> to close
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>Solutions Library - OllamaHub</title>
+    <meta property="og:title" content="Solutions Library - OllamaHub">
+    <meta property="og:description" content="Discover curated solutions to common problems, performance optimization tips, and troubleshooting guides.">
+    <meta property="og:url" content="https://ollamahub.com/solutions/index.html">
+    <meta property="og:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Solutions Library - OllamaHub">
+    <meta name="twitter:description" content="Discover curated solutions to common problems, performance optimization tips, and troubleshooting guides.">
+    <meta name="twitter:image" content="https://ollamahub.com/assets/og-image.jpg">
+    <link rel="canonical" href="https://ollamahub.com/solutions/index.html">
+
+    <meta name="description" content="Discover curated solutions to common problems, performance optimization tips, and troubleshooting guides.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        indigo: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3H38EBLP10"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3H38EBLP10');
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <div class="flex-shrink-0 flex items-center gap-2">
+                <button id="mobile-menu-btn" class="md:hidden mr-2 text-slate-500 hover:text-slate-900 focus:outline-none">
+                    <i class="ph ph-list text-2xl" id="mobile-menu-icon"></i>
+                </button>
+                <a href="../index.html" class="flex items-center gap-2">
+                    <i class="ph-fill ph-planet text-3xl text-indigo-600"></i>
+                    <span class="font-bold text-xl tracking-tight hidden sm:block ">OllamaHub</span>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="../index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Home</a>
+                <a href="../docs/index.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Docs</a>
+                <a href="index.html" class="text-indigo-600 font-medium transition-colors">Solutions</a>
+                <a href="../resources.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">Resources</a>
+                <a href="../about.html" class="text-slate-600 hover:text-indigo-600 font-medium transition-colors">About</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="header-search-input" placeholder="Search..." class="pl-10 pr-10 py-1.5 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-48 lg:w-64 bg-slate-50">
+                    <span class="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 border border-slate-200 rounded px-1.5 py-0.5 bg-white">⌘K</span>
+                </div>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-900">
+                    <i class="ph ph-github-logo text-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-nav" class="hidden md:hidden bg-white border-t border-slate-100 px-4 py-3 space-y-1 shadow-md absolute w-full left-0 z-40">
+        <a href="../index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Home</a>
+        <a href="../docs/index.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Docs</a>
+        <a href="index.html" class="block px-3 py-2 rounded-md text-indigo-600 bg-indigo-50 font-medium">Solutions</a>
+        <a href="../resources.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">Resources</a>
+        <a href="../about.html" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50 font-medium">About</a>
+        <div class="pt-2 pb-1">
+            <div class="relative">
+                <i class="ph ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                <input type="text" id="mobile-search-input" placeholder="Search..." class="w-full pl-10 pr-4 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50">
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Page Header -->
+    <div class="bg-white border-b border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Community Solutions</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                Discover curated solutions to common problems, performance optimization tips, and troubleshooting guides derived from GitHub issues.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content Layout -->
+    <div class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 flex flex-col lg:flex-row items-start gap-8">
+        
+        <!-- Sidebar Filters -->
+        <aside class="w-full lg:w-64 flex-shrink-0 lg:sticky top-24">
+            
+            <div class="mb-8">
+                <h3 class="font-semibold text-slate-900 mb-4 flex items-center gap-2 uppercase text-xs tracking-wider">
+                    <i class="ph ph-folder"></i> Categories
+                </h3>
+                <ul class="space-y-2" id="solutions-categories">
+                    <!-- Categories injected by JS -->
+                </ul>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="font-semibold text-slate-900 mb-4 flex items-center gap-2 uppercase text-xs tracking-wider">
+                    <i class="ph ph-tag"></i> Popular Tags
+                </h3>
+                <div class="flex flex-wrap gap-2" id="solutions-tags">
+                    <!-- Tags injected by JS -->
+                </div>
+            </div>
+            
+            <div class="p-4 bg-indigo-50 border border-indigo-100 rounded-lg hidden lg:block">
+                <h4 class="font-medium text-indigo-900 mb-2 text-sm">Contribute Solutions</h4>
+                <p class="text-xs text-indigo-700 mb-3">Found a fix not listed here? Submit a pull request or open an issue to help the community.</p>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800 flex items-center gap-1">
+                    Read the Guide <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Solutions List -->
+        <main class="flex-grow min-w-0 w-full">
+            <!-- Filter Actions (Mobile) & Sort -->
+            <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+                <p class="text-sm text-slate-500" id="solutions-count">Showing all solutions</p>
+                
+                <div class="flex items-center justify-between w-full sm:w-auto ml-auto text-sm text-slate-500">
+                    <span class="mr-3">Sort by:</span>
+                    <select id="sort-select" class="bg-white border border-slate-200 rounded-md px-3 py-1.5 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500">
+                        <option value="votes">Highest Voted</option>
+                        <option value="recent">Recently Updated</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- List of Issues -->
+            <div class="space-y-4" id="solutions-list">
+                <!-- Issues injected by JS -->
+            </div>
+            
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <i class="ph-fill ph-planet text-2xl text-slate-400"></i>
+                <span class="font-semibold text-slate-600">OllamaHub</span>
+            </div>
+            <div class="flex gap-6 text-sm text-slate-500">
+                <a href="#" class="hover:text-indigo-600">Privacy Policy</a>
+                <a href="#" class="hover:text-indigo-600">Terms of Service</a>
+                <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener" class="hover:text-indigo-600">Contribute</a>
+            </div>
+            <p class="text-sm text-slate-400">&copy; 2026 OllamaHub. Not officially affiliated with Ollama.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('../_data/solutions.json');
+                const solutions = await response.json();
+                
+                const listContainer = document.getElementById('solutions-list');
+                const countText = document.getElementById('solutions-count');
+                const sortSelect = document.getElementById('sort-select');
+                const categoriesContainer = document.getElementById('solutions-categories');
+                const tagsContainer = document.getElementById('solutions-tags');
+                
+                let currentCategory = 'all';
+                let currentTag = null;
+                let currentSort = 'votes';
+
+                // Extract all unique categories and count them
+                const categoriesCount = { 'all': solutions.length };
+                const tagsCount = {};
+
+                solutions.forEach(s => {
+                    categoriesCount[s.category] = (categoriesCount[s.category] || 0) + 1;
+                    s.tags.forEach(tag => {
+                        tagsCount[tag] = (tagsCount[tag] || 0) + 1;
+                    });
+                });
+
+                // Render Categories
+                categoriesContainer.innerHTML = `
+                    <li>
+                        <a href="#" class="category-link flex items-center justify-between font-medium px-3 py-2 rounded-md transition-colors bg-indigo-50 text-indigo-600" data-category="all">
+                            <span>All Categories</span>
+                            <span class="text-xs bg-white text-indigo-600 px-2 py-0.5 rounded-full border border-indigo-100">${categoriesCount['all']}</span>
+                        </a>
+                    </li>
+                ` + Object.keys(categoriesCount).filter(c => c !== 'all').map(category => `
+                    <li>
+                        <a href="#" class="category-link flex items-center justify-between text-slate-600 hover:bg-slate-100 px-3 py-2 rounded-md transition-colors" data-category="${category}">
+                            <span>${category}</span>
+                            <span class="text-xs text-slate-400">${categoriesCount[category]}</span>
+                        </a>
+                    </li>
+                `).join('');
+
+                // Render Tags (Top 10)
+                const topTags = Object.keys(tagsCount).sort((a, b) => tagsCount[b] - tagsCount[a]).slice(0, 10);
+                tagsContainer.innerHTML = topTags.map(tag => `
+                    <a href="#" class="tag-link px-3 py-1 bg-white border border-slate-200 text-slate-600 text-sm rounded-md hover:border-indigo-300 hover:text-indigo-600 transition-colors" data-tag="${tag}">${tag}</a>
+                `).join('');
+
+                const renderSolutions = () => {
+                    listContainer.innerHTML = '';
+                    
+                    let filtered = solutions.filter(s => {
+                        const matchCat = currentCategory === 'all' || s.category === currentCategory;
+                        const matchTag = !currentTag || s.tags.includes(currentTag);
+                        return matchCat && matchTag;
+                    });
+
+                    filtered.sort((a, b) => {
+                        if (currentSort === 'votes') {
+                            return b.votes - a.votes;
+                        } else {
+                            // recent -> just simple string fallback or id fallback
+                            return b.id - a.id; 
+                        }
+                    });
+
+                    countText.textContent = `Showing ${filtered.length} solution${filtered.length !== 1 ? 's' : ''}`;
+
+                    if (filtered.length === 0) {
+                        listContainer.innerHTML = '<p class="text-slate-500 py-8 text-center bg-white border border-slate-200 rounded-xl">No solutions found matching the filters.</p>';
+                        return;
+                    }
+
+                    filtered.forEach(solution => {
+                        const tagsHtml = solution.tags.map(tag => `<span class="text-xs text-slate-500 bg-slate-50 border border-slate-200 px-2 py-1 rounded">${tag}</span>`).join('');
+                        
+                        const item = document.createElement('div');
+                        item.className = 'bg-white border border-slate-200 rounded-xl p-5 hover:border-indigo-300 hover:shadow-md transition-all';
+                        
+                        // Using a simple color map for the badge
+                        const colorMap = {
+                            'red': 'bg-red-50 text-red-700 border-red-100',
+                            'blue': 'bg-blue-50 text-blue-700 border-blue-100',
+                            'amber': 'bg-amber-50 text-amber-700 border-amber-100',
+                            'purple': 'bg-purple-50 text-purple-700 border-purple-100',
+                            'green': 'bg-green-50 text-green-700 border-green-100',
+                            'indigo': 'bg-indigo-50 text-indigo-700 border-indigo-100'
+                        };
+                        const badgeColor = colorMap[solution.categoryColor] || 'bg-slate-50 text-slate-700 border-slate-200';
+
+                        item.innerHTML = `
+                            <div class="flex items-start gap-4">
+                                <div class="flex-shrink-0 flex flex-col items-center justify-center w-12 pt-1">
+                                    <button class="text-slate-400 hover:text-indigo-500 transition-colors">
+                                        <i class="ph-fill ph-caret-up text-xl"></i>
+                                    </button>
+                                    <span class="font-bold text-slate-700 text-sm">${solution.votes}</span>
+                                </div>
+                                <div class="flex-grow min-w-0">
+                                    <div class="flex flex-wrap items-center gap-2 mb-1">
+                                        <span class="px-2 py-0.5 rounded text-xs font-medium border ${badgeColor}">${solution.category}</span>
+                                        <h2 class="text-lg font-semibold text-slate-900 truncate pr-4 hover:text-indigo-600 transition-colors cursor-pointer">
+                                            <a href="${solution.href}">${solution.title}</a>
+                                        </h2>
+                                    </div>
+                                    <p class="text-slate-600 text-sm mb-3 line-clamp-2">${solution.summary}</p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex gap-2 flex-wrap">
+                                            ${tagsHtml}
+                                        </div>
+                                        <div class="flex items-center gap-4 text-xs text-slate-400 flex-shrink-0 ml-4">
+                                            <span class="flex items-center gap-1"><i class="ph ph-chat-circle"></i> ${solution.comments}</span>
+                                            <span class="hidden sm:inline">Updated ${solution.updatedAt}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        listContainer.appendChild(item);
+                    });
+                };
+
+                // Event Listeners
+                document.querySelectorAll('.category-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = e.currentTarget;
+                        currentCategory = target.getAttribute('data-category');
+                        
+                        document.querySelectorAll('.category-link').forEach(l => {
+                            l.classList.remove('bg-indigo-50', 'text-indigo-600');
+                            l.classList.add('text-slate-600', 'hover:bg-slate-100');
+                        });
+                        target.classList.remove('text-slate-600', 'hover:bg-slate-100');
+                        target.classList.add('bg-indigo-50', 'text-indigo-600');
+                        
+                        renderSolutions();
+                    });
+                });
+
+                document.querySelectorAll('.tag-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = e.currentTarget;
+                        const tag = target.getAttribute('data-tag');
+                        
+                        if (currentTag === tag) {
+                            currentTag = null; // Toggle off
+                            target.classList.remove('bg-indigo-50', 'border-indigo-200', 'text-indigo-700');
+                            target.classList.add('bg-white', 'border-slate-200', 'text-slate-600');
+                        } else {
+                            currentTag = tag;
+                            document.querySelectorAll('.tag-link').forEach(l => {
+                                l.classList.remove('bg-indigo-50', 'border-indigo-200', 'text-indigo-700');
+                                l.classList.add('bg-white', 'border-slate-200', 'text-slate-600');
+                            });
+                            target.classList.remove('bg-white', 'border-slate-200', 'text-slate-600');
+                            target.classList.add('bg-indigo-50', 'border-indigo-200', 'text-indigo-700');
+                        }
+                        
+                        renderSolutions();
+                    });
+                });
+
+                sortSelect.addEventListener('change', (e) => {
+                    currentSort = e.target.value;
+                    renderSolutions();
+                });
+
+                renderSolutions();
+            } catch (err) {
+                console.error("Failed to load solutions:", err);
+            }
+        });
+    </script>
+</body>
+</html>

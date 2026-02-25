@@ -1,0 +1,14 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "dependencies": {
+        "marked": "^17.0.3",
+      },
+    },
+  },
+  "packages": {
+    "marked": ["marked@17.0.3", "https://registry.npmmirror.com/marked/-/marked-17.0.3.tgz", { "bin": { "marked": "bin/marked.js" } }, "sha512-jt1v2ObpyOKR8p4XaUJVk3YWRJ5n+i4+rjQopxvV32rSndTJXvIzuUdWWIy/1pFQMkQmvTXawzDNqOH/CUmx6A=="],
+  }
+}
