@@ -186,11 +186,11 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="../../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                const response = await fetch('../_data/solutions.json');
+                const response = await fetch('../../_data/solutions.json');
                 const solutions = await response.json();
                 
                 const listContainer = document.getElementById('solutions-list');
